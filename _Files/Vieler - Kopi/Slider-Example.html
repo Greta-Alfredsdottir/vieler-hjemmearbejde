@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Thing</title>
+    <!-- STYLES -->
+     <link rel="icon" href="assets/Images/Bone.svg">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Griffy&display=swap');
+        /*#region GLOBAL STYLES */
+        :root{
+            --dark: #212121;
+            --light: #fafafa;
+            --blue-light: #7bd6fd;
+            --blue-dark: #2b97c5;
+        }
+        body{
+            font-family: "Griffy", system-ui;
+            background-color: #212121;
+        }
+        /* SCALING FONTS DYNAMICAL */
+        body > h1:first-of-type{
+            font-size: 8vw;
+            margin: 2rem 1rem 0.5rem 0;
+            color: var(--blue-dark);
+        }
+        /* "WRAPPER" */
+        .container-main{
+            max-width: 1300px;
+            margin: auto;
+        }
+        /* ALL IMAGES */
+        img{
+            display: block;
+            width: 100%;
+        }
+        /* ALL FIGUES */
+        figure{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        /* #endregion */
+        /*#region THE SLIDER THING */
+        .slider{
+            position: relative;
+        }
+        /* MAIN IMAGES IN ROOT OF SLIDER "HOVER EFFEKT"*/
+        .slider > img{
+            transition: 400ms;
+            cursor: pointer;
+        }
+        .slider > img:hover{
+            filter: brightness(0.5);
+        }
+        /* BOTH LEFT AND RIGHT BUTTONS */
+        .slider button{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: 0;
+            color: #ffffff66;
+            font-size: 3rem;
+            cursor: pointer;
+            transition: 300ms;
+        }
+        .slider button:hover{
+            color: #ffffff;
+        }
+        /* RIGHT BUTTON */
+        .slider button:last-of-type{
+            right: 0;
+        }
+        .slider hgroup{
+            position: absolute;
+            bottom: 20%;
+            right: 30%;
+            transform: translate(50%, 50%);
+            color: #fff;
+            /* border: 3px solid red; */
+            box-sizing: border-box;
+        }
+        /* "BOTH" SLIDER HEADINGS */
+        .slider hgroup h3,
+        .slider hgroup h4{
+            font-size: 4.4vw;
+            margin: 0;
+            color: var(--blue-light);
+        }
+        /* HEADING 4 A BIT "SMALLER" */
+        .slider hgroup h4{
+            font-size: 3vw;
+        }
+        /* #endregion */
+        /*#region GALLERY */
+        .gallery{
+            display: grid;
+            gap: 1rem;
+        }
+        /* #endregion */
+        /*#region MEDIAQUERIES */
+        /* OVER 600PX */
+        @media (min-width: 600px){
+            .gallery{
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        /* OVER 800PX */
+        @media (min-width: 800px){
+            .gallery{
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        /* OVER 1200PX */
+        @media (min-width: 1200px){
+            .gallery{
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
+        /* #endregion */
+    </style>
+    <script src="assets/Js/Dogs.js" defer></script>
+</head>
+<body>
+    <h1>Slider Thing</h1>
+        <header class="slider">
+            <img class="mySlides" src="Assets/Images/Hero-Image-01.jpg" style="width:100%">
+            <img class="mySlides" src="Assets/Images/Hero-Image-02.jpg" style="width:100%">
+            <img class="mySlides" src="Assets/images/Hero-Image-03.jpg" style="width:100%">
+            <img class="mySlides" src="Assets/Images/Hero-Image-04.jpg" style="width:100%">
+            <img class="mySlides" src="Assets/images/Hero-Image-05.jpg" style="width:100%">
+
+            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+            <hgroup>
+                <h3>This is the Slider Thing</h3>
+                <h4>Another Subheading in the Hgroup!</h4>
+            </hgroup>
+        </header>
+        <section class="gallery">
+            <figure><img src="assets/Images/Uploads/Happy-01.jpg" alt="Happy-Dog-01"></figure>
+            <figure><img src="assets/Images/Uploads/Happy-02.jpg" alt="Happy-Dog-02"></figure>
+            <figure><img src="assets/Images/Uploads/Happy-03.jpg" alt="Happy-Dog-03"></figure>
+            <figure><img src="assets/Images/Uploads/Happy-04.jpg" alt="Happy-Dog-04"></figure>
+            <figure><img src="assets/Images/Uploads/Happy-05.jpg" alt="Happy-Dog-05"></figure>
+            <figure><img src="assets/Images/Uploads/Happy-06.jpg" alt="Happy-Dog-06"></figure>
+            <figure><img src="assets/Images/Uploads/Happy-07.jpg" alt="Happy-Dog-07"></figure>
+            <figure><img src="assets/Images/Uploads/Happy-08.jpg" alt="Happy-Dog-08"></figure>
+            <figure><img src="assets/Images/Uploads/Happy-09.jpg" alt="Happy-Dog-09"></figure>
+            <figure><img src="assets/Images/Uploads/Happy-10.jpg" alt="Happy-Dog-10"></figure>
+            <figure><img src="assets/Images/Uploads/Happy-11.jpg" alt="Happy-Dog-11"></figure>
+            <figure><img src="assets/Images/Uploads/Happy-12.jpg" alt="Happy-Dog-12"></figure>
+        </section>
+</body>
+</html>
